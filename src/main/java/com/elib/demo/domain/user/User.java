@@ -1,4 +1,7 @@
-package com.elib.demo;
+package com.elib.demo.domain.user;
+
+import com.elib.demo.domain.document.Document;
+import com.elib.demo.domain.document.Loan;
 
 import java.util.ArrayList;
 import java.util.List;

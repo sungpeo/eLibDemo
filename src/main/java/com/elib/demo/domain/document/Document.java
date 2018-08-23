@@ -1,4 +1,6 @@
-package com.elib.demo;
+package com.elib.demo.domain.document;
+
+import com.elib.demo.domain.user.User;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -85,7 +87,7 @@ public class Document {
 		return !isAvailable();
 	}
 	
-	public boolean authorizedLoan(User user) { 
+	public boolean authorizedLoan(User user) {
 		switch (type) {
 		case BOOK: 
 			return true;

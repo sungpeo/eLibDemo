@@ -1,5 +1,8 @@
 package com.elib.demo;
 
+import com.elib.demo.infrastructure.persistence.Persistence;
+import com.elib.demo.infrastructure.persistence.QueryPersistence;
+
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -47,8 +50,9 @@ public class GoldenMaster {
         ByteArrayInputStream bais = new ByteArrayInputStream(INPUT_STRING_FOR_SIMULATATION.getBytes());
         System.setIn(bais);
 
-        CmdUI ui = new CmdUI();
-        ui.start();
+        Persistence persistence = QueryPersistence.getInstance();
+        Dispatcher dispatcher = Dispatcher.createDispatcher(persistence);
+        new CmdUI(dispatcher).start();
 
         return baos.toByteArray();
     }

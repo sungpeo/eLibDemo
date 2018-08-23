@@ -1,4 +1,6 @@
-package com.elib.demo;
+package com.elib.demo.domain.document;
+
+import com.elib.demo.domain.user.User;
 
 import java.time.LocalDate;
 
